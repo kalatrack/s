@@ -6,6 +6,8 @@
 		
 		function __construct(){	
 			parent::__construct();
+			$this->data['site_name'] = config_item('site_name');
+			
 		}
 	}
 

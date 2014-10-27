@@ -1,6 +1,6 @@
 <?php 
 
-	class Migration_Create_pages extends CI_Migration {
+	class Migration_Create_articles extends CI_Migration {
 
 			public function up()
 			{
@@ -20,24 +20,29 @@
 						'null' => TRUE,
 						'constraint' => '128',
 					),
-					'order' => array(
-						'type' => 'INT',
-						'null' => TRUE,
-						'constraint' => '11',
+					'pubdate' => array(
+						'type' => 'DATE',
 					),
 					'body' => array(
 						'type' => 'TEXT',
 						'null' => TRUE,
-				)));
+					),
+					'created' => array(
+						'type' => 'DATETIME',
+					),
+					'modified' => array(
+						'type' => 'DATETIME',
+					)
+					));
 
 				$this->dbforge->add_key('id', TRUE);
 
 
-				$this->dbforge->create_table('pages');
+				$this->dbforge->create_table('articles');
 			}
 
 		public function down(){
-			$this->dbforge->drop_table('pages');
+			$this->dbforge->drop_table('articles');
 		}
 }
 

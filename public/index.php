@@ -18,7 +18,7 @@
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-echo "Host Name : "; var_dump($_SERVER['HTTP_HOST']);
+
 if($_SERVER['HTTP_HOST'] === 'localhost'){
 	define('ENVIRONMENT', 'development');
 }else{	
